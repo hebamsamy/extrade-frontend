@@ -1,14 +1,62 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+<!-- <nav id="navbar">
+  <ul>
+    <li><img class="logonav" src="../../../../assets/image/x34.png" alt=""></li>
+    <li><a class="active" href="#">Home </a></li>
+        <li><a href="#">About Us </a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Read More</a></li>
+    <li><input type="text" placeholder="Click Here To Search" /> <img class="searchic" src="../../../../assets/image/search2.png" alt=""></li>
+    <a [routerLink]="['/favourite']" class="hearticon">
+      <i class="fa fa-solid fa-heart "></i>
+       <div class="badge bg-danger badge">{{totalItem}}</div>
+  </a> 
+
+<a [routerLink]="['/cart']" class="carticon">
+    <i class="fas fa-cart-plus card-plus"></i>
+    <div class="badge bg-danger badge">{{totalItem}}</div>
+</a>
+
+    <li><img id="login" class="enterLogin" src="./enter.png" alt=""></li>
+    
+  </ul>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a><img class="logonav" src="../../../../assets/image/x34.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link" href="#">Contant Us</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="#">Reed More</a>
         </li>
       </ul>
-  </nav>
-  
+      <form class="d-flex">
+        <li><input type="text" placeholder="Click Here To Search" /><img class="searchic" src="../../../../assets/image/search2.png" alt=""></li>
+      
+<a [routerLink]="['/favourite']" class="carticon">
+  <i class="fa fa-solid fa-heart"></i>
+    <div class="badge bg-danger badge">{{totalItem}}</div>
+</a>
+
+<a [routerLink]="['/cart']" class="carticon">
+  <i class="fa fa-solid fa-cart-plus"></i>
+    <div class="badge bg-danger badge">{{totalItem}}</div>
+</a>
+        <li><img id="login" class="enterLogin" src="../../../../assets/image/enter.png" alt=""></li>
+      </form>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,175 @@
+<div class="background ">
+
+    
+  <div class="bg-form">
+      <div class="rounded" >
+          <h1 >Sign UP</h1>
+          <form [formGroup]="Form" >
+              <div >
+                  <label for="IDFRISTNAME" > 
+                    <i class="fa fa-solid fa-user"></i><span>Name En</span></label>
+                    <label for="IDFRISTNAME" class="label" > 
+                      <i class="fa fa-solid fa-user"></i><span>Name Ar</span></label>
+              </div>
+                  <input formControlName="nameEn" type="text" name="full name" id="IDfristname"
+                      placeholder="enter your name please " required >
+                      <span class="text-danger" *ngIf="!Form.controls['nameEn'].valid && 
+                      Form.controls['nameEn']?.touched"> Required Your Name in English</span>
+                      <input formControlName="nameAr" type="text" name="full name" id="IDlastname" 
+                      placeholder="enter your name please " required >
+                      <span class="text-danger" *ngIf="!Form.controls['nameAr'].valid && 
+                      Form.controls['nameAr']?.touched"> Required Your Name in Arabic</span>
+                   
+                      <div >
+                  <label for="IDEmail" >
+                      <i class="fa fa-solid fa-at"></i> <span>Email</span></label>
+              </div>
+                  <input formControlName="email" type="email" name="Email" id="IDEmail"
+                      placeholder="enter your email please " required>
+                      <span class="text-danger" *ngIf="!Form.controls['email'].valid && 
+                      Form.controls['email']?.touched"> Required Your Email</span>
+                      
+              <div >
+                  <label for="IDpass" >
+                      <i class="fa fa-solid fa-lock"></i><span>Password</span></label>
+                 
+                    
+              </div>
+          
+              <input formControlName="password" type="password"  id="IDpass" name="password"
+              placeholder="enter your password  " required>
+              
+                  <span class="text-danger" *ngIf="!Form.controls['password'].valid && 
+                  Form.controls['password']?.touched"> Required Your password</span>
+                  
+                               
+              <div class="d-flex" >
+                <label for="IDpass"  >
+                  <i class="fa fa-solid fa-globe"></i><span>Country</span></label>
+                   <label for="IDpass1"  class="city"  >
+                      <i class="fa fa-solid fa-city"></i><span>City</span></label>       
+                      <label for="IDpass1" class="city"  >
+                          <i class="fa fa-solid fa-road"></i><span>Street</span></label>    
+              </div>
+              <input formControlName="country" type="text"  id="IDcountry" name="country"
+              placeholder="country " required>
+              <span class="text-danger" *ngIf="!Form.controls['country'].valid && 
+              Form.controls['country']?.touched"> Required Your country</span>
+                  <input formControlName="city" type="text" id="IDcity" name="city"
+                      placeholder="city " required>
+                      <span class="text-danger" *ngIf="!Form.controls['city'].valid && 
+                      Form.controls['city']?.touched"> Required Your city</span>
+                      <input formControlName="street" type="text" id="IDstreet" name="street"
+                      placeholder="street " required>
+                     
+                      
+                      <span class="text-danger" *ngIf="!Form.controls['street'].valid && 
+                      Form.controls['street']?.touched"> Required Your street</span>
+                   
+              <div> 
+                  <label for="IDpass" style="display: block;">
+                      <i class="fa fa-solid fa-phone"></i><span>Phone</span></label>
+                      
+                          <label for="IDphone"  class="eg-num">+20</label>
+                          <input  formControlName="phones" type="text"  id="IDphone" name="phone"
+                          placeholder="enter your phone please  " required>
+                          <span class="text-danger" *ngIf="!Form.controls['phones'].valid && 
+                          Form.controls['phones']?.touched"> Required Your city</span>
+                      
+                      </div>  
+                      <div>
+                          <label for="IDpass" style="display: block;">
+                              <i class="fa fa-solid fa-file-word"></i><span>Taxcard</span></label>
+                              
+                                 
+                                     
+                              <input  formControlName="taxCard" type="file"  id="IDEmail" name="texcard"
+                              placeholder="enter your texcard" required >
+                          </div> 
+                              
+            
+                 <div class="checkbox d-flex ">
+                      <input type="checkbox" id="CB">
+                      <p >I Agree With Privacy and Policy</p>
+              </div>
+              <div class="but-sign">
+              <button type="submit" class="btn" [disabled]="Form.invalid" (click)="add()">Sign up</button>
+                  <span>Already have an account ?</span> 
+                  <a routerLink='/account/login'>Log In</a>
+               </div>
+  
+          </form>
+      </div>
+          <div>
+              <img src="/../assets/image/one.png"/>
+          </div>
+    
+     
+  </div>
+</div>
+<!-- <p>marketer-signup </p>
+<form  [formGroup]="Form"  method="post"   enctype="multipart/form-data" >
+  <div class="mb-3">
+    <label for="NameEn">Name English</label>
+    <input type="text" id="NameEn" formControlName="nameEn" class="form-control">
+    <span class="text-danger" *ngIf="!Form.controls['nameEn'].valid && 
+    Form.controls['nameEn']?.touched"> Required Your Name in English</span>
+  </div>
+    <div class="mb-3">  
+    <label for="NameAr">Name Arabic </label>
+    <input type="text" id="NameAr" formControlName="nameAr" class="form-control">
+   
+    <span class="text-danger" *ngIf="!Form.controls['nameAr'].valid && 
+    Form.controls['nameAr']?.touched"> Required Your Name in Arabic</span>
+  </div>
+    <div class="mb-3">
+    <label for="Email">Email </label>
+    <input type="text" id="Email" formControlName="email" class="form-control">
+    <span class="text-danger" *ngIf="!Form.controls['email'].valid && 
+    Form.controls['email']?.touched"> Required Your Email</span>
+    <br>
+    <span class="text-danger" *ngIf="Form.controls['email'].hasError('pattern')">Enter @</span>
+  </div>
+    <div class="mb-3">
+    <label for="Password">Password </label>
+    <input type="password" id="Password" formControlName="password" class="form-control">
+    <span class="text-danger" *ngIf="!Form.controls['password'].valid && 
+    Form.controls['password']?.touched"> Required Your password</span>
+  </div>
+    <div class="mb-3">
+    <label for="Country">Country </label>
+    <input type="text" id="Country" formControlName="country" class="form-control">
+    <span class="text-danger" *ngIf="!Form.controls['country'].valid && 
+    Form.controls['country']?.touched"> Required Your country</span>
+  </div>
+    <div class="mb-3">
+    <label for="City">City  </label>
+    <input type="text" id="City" formControlName="city" class="form-control">
+    <span class="text-danger" *ngIf="!Form.controls['city'].valid && 
+    Form.controls['city']?.touched"> Required Your city</span>
+  </div>
+    <div class="mb-3">
+    <label for="Street">Street</label>
+    <input type="text" id="Street" formControlName="street" class="form-control">
+    <span class="text-danger" *ngIf="!Form.controls['street'].valid && 
+    Form.controls['street']?.touched"> Required Your street</span>
+  </div>
+    <div class="mb-3">
+    <label for="Phones">Phones</label>
+    <input type="text" id="Phones" formControlName="phones"class="form-control">
+    <span class="text-danger" *ngIf="!Form.controls['phones'].valid && 
+    Form.controls['phones']?.touched"> Required Your city</span>
+    </div>
+    
+   
+
+  <div class="mb-3">
+    <label for="uploadedimg">TaxCard  :</label>
+    <input type="file" id="uploadedimg" formControlName="taxCard" class="form-control">
+  
+  </div>
+    
+   
+    <input type="submit" value="Sign Up" class="btn btn-primary" (click)="add()" [disabled]="!Form.valid" routerLink="/Login">
+    
+  </form> -->

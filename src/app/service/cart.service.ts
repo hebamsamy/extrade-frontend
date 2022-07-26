@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
@@ -8,10 +9,10 @@ export class CartService {
   public CartItemList :any =[]
   public ProductList = new BehaviorSubject<any>([]);
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getProducts(){
-    return this.ProductList.asObservable();
+    return this.http.get<any>("https://localhost:63000/Api/Getproduct")
   }
 
   setProduct(Product :any){

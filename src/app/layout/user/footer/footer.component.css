@@ -1,0 +1,23 @@
+footer{
+    margin-top: 5rem;
+    
+    }
+    
+    footer .footerbg {
+      display: flex;
+      max-width: 100%;
+      padding: 0;
+    }
+    footer .logo {
+      display: flex;
+      margin-top: -13rem;
+      margin-left: 10rem;
+      margin-bottom: 2rem;
+    max-width: 20rem;
+    }
+    footer p {
+      text-align: center;
+      color: #0066ff;
+      margin-bottom: 1rem;
+    }
+    

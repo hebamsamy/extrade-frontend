@@ -9,19 +9,22 @@
                     <label for="IDEmail" >
                       <i class="fa fa-solid fa-at"></i> <span>Email</span></label>
                 </div>
-                  <input formControlName="email" type="email" name="Email" id="IDEmail"
+                  <input formControlName="Email" type="email" name="Email" id="IDEmail"
                      placeholder="enter your email please " required>
-                        
+                     <span class="text-danger" *ngIf="!loginform.controls['Email'].valid && 
+                     loginform.controls['Email']?.touched"> Required Your Email</span>
+                     <span class="text-danger" *ngIf="loginform.controls['Email'].hasError('pattern')">Enter @</span>
+                 
                 <div >
                   <label for="IDpass" >
                      <i class="fa fa-solid fa-lock"></i><span>Password</span></label>
                 </div>
-                <input type="email" name="password" id="IDEmail"
+                <input type="password" formControlName="Password" id="IDEmail"
                 placeholder="enter your password please " required>
-
+                <span class="text-danger" *ngIf="!loginform.controls['Password'].valid && 
+                loginform.controls['Password']?.touched"> Required Your Password</span>
                 <div class="but-sign">
-                    <button  type="button" class="btn btn-danger"  (click)="login()"
-                    [routerLink]="['/marketer/home']"  >
+                    <button  type="button" class="btn btn-danger"  (click)="login()" >
                         Log in</button>
                         <a [routerLink]="['/account/signup']">Sign up</a>
                 </div>

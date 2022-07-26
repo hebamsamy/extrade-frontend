@@ -1,0 +1,98 @@
+ <!-- <div class="card"  *ngFor="let item of Data">
+ 
+    <div class="card-body">
+        <p>{{item.categoryID}}</p>
+    </div>
+</div> -->
+
+<!-- <div *ngIf="loading" class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  <div *ngIf="!loading">
+  <div class="container" >
+  <div class="card " style="width: 18rem;" *ngFor="let item of Data">
+     
+      <div class="card-body">
+        <h5 class="card-title">prouduct Details</h5>
+        <p class="card-text">nameProduct : {{item.nameAr}}</p>
+        <p class="card-text">nameProduct : {{item.nameEn}}</p>
+        <p class="card-text">Description : {{item.description}}</p>
+        <p class="card-text">Price : {{item.price}}</p>
+  
+  
+        <p class="card-text">Sold By : {{item.vendorName}}</p>
+        <p class="card-text">Sold By : {{item.id}}</p>
+        <a [routerLink]="['/cart']"   (click)="add(item.id)" class="btn btn-primary">Add to cart </a>
+      </div>
+    </div>
+  
+  </div>
+  </div> -->
+
+  
+<div class="background"></div>
+<div class="d-flex">
+  <div class="col-3  ">
+
+    <div class="card box">
+      <h2 class="card-header" >Categories</h2>
+      <div class="card-body">
+        <div class="border box" (click)="filtercategoty('all')">All Product</div>
+        <div class="border box " *ngFor="let option of categorieslist" (click)="filtercategoty(option)">{{option}}</div>
+      </div>
+    </div>
+    <div class="card box">
+      <h2 class="card-header">Price Filter</h2>
+      <div class="card-body">
+        <input type="range" min="200" max="10000" value="50">
+
+      </div>
+    </div>
+
+
+  </div>
+  <!-- <div class="card box">
+    <h2 class="card-header">Paypal</h2>
+    <div class="card-body">
+      <div id="myPaypalButtons"></div>
+
+    </div>
+  </div>
+
+
+</div> -->
+
+  <div class="col-9 container">
+    <div class="form-groub">
+      <input type="text" class="search-input" id="filter-text-box" placeholder="Search Product" #query
+        (keyup.enter)="filter(query.value)" />
+        <span class="fas fa-search search-icon"></span>
+    </div>
+   
+
+  <div class="row" *ngIf="!loading">
+    <ng-container *ngFor="let item of productlist">
+      <div class="card col-md-3 " >
+        <button class="btn " (click)=addtofavourit(item)><i class="fa fa-solid fa-heart hearticon"></i></button>
+      
+<!-- <a [routerLink]="['details/',item.id]" >
+  <img class="image" [src]="item.image" alt="" />
+</a> -->
+
+        <div class="body">
+          <h5 class="title">{{item.title}}</h5>
+          <!-- <h5>{{item.NameEn}}</h5> -->
+          <p class="title">{{item.description}}</p>
+          <!-- <p>{{item.Description}}</p> -->
+        </div>
+        <h6><strong>Price:</strong>{{item.price}}</h6>
+        <button class="btn color" (click)=addtocart(item)>Add To Card</button>
+
+      </div>
+    </ng-container>
+  </div>
+</div>
+<div class="text-center w-100 " *ngIf="loading">
+
+  loading.......................
+</div>

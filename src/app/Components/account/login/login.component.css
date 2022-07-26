@@ -2,7 +2,8 @@
 {
     margin: 0;
     padding: 0;
-    height: 47rem;
+     height: 47rem; 
+    /* height: 100%; */
     background-color:rgb(98, 175, 231);
     background-image: linear-gradient(to bottom right,rgb(11, 74, 45) , rgb(130, 238, 244));
     display: flex;
@@ -15,7 +16,7 @@
    width: 88rem;
    margin-top: 3rem;
    margin-left: 4rem;
-   display: flex;
+   display: flex; 
 
 
 }

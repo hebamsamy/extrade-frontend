@@ -1,0 +1,193 @@
+
+
+  nav  .logonav{
+    max-width: 7rem;
+  
+   
+    left: 2rem;
+    top: 0rem;
+  }
+  nav ul {
+   margin-left: 400px;
+  }
+
+nav ul li a {
+  text-decoration: none;
+  color: #0066ff;
+  text-align: center;
+  margin-left: 1rem;
+  padding: 1rem;
+  transition: linear;
+  
+}
+nav ul li a:hover {
+  background-color: #0066ff;
+  color: #ffffff;
+  border-bottom: 0.1rem solid #000d21;
+  transition: all 0.2s;
+  box-shadow: #0066ff 0.2rem 0.1rem 0.9rem 0.1rem;
+
+} 
+ .active {
+  color: #0d0043;
+  border-bottom: 0.1rem solid #003b42;
+}
+nav form input {
+  border: none;
+  border-radius: 2rem;
+background-color: none;
+  margin-bottom: 1rem;
+  margin-left: -300px;
+  width: 12rem;
+  height: 2rem;
+  border: 0.01rem solid rgb(3, 32, 89);
+}
+nav form input:focus {
+  border: none;
+  color: rgb(0, 0, 0);
+  border-radius: 2rem;
+  transition: all 0.5s;
+  padding: 1rem;
+  outline: none;
+  box-shadow: #0066ff 0.2rem 0.1rem 0.9rem 0.1rem;
+}
+nav form input::placeholder {
+  color: #52050a;
+  opacity: 0.5;
+  padding: 0.2rem;
+} 
+.searchic {
+width: 22px;
+  margin-top: -1rem;
+  margin-left: -2rem;
+  margin-bottom: -0.3rem;
+  cursor: pointer;
+}
+.enterLogin{
+  max-width: 2rem;
+  margin-left: 5rem;
+  cursor: pointer;
+
+}
+i
+{
+  font-size: 50px;
+}
+/* /* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+  } */
+
+
+  /* NavBar */
+  /* nav {
+    background-color: none;
+    width: 100%;
+    
+    padding: 0.5rem;
+    margin-top: 2rem;
+    margin-right: 5rem;
+  }
+  nav ul {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+  }
+   nav ul li {
+    list-style: none;
+    text-align: center;
+  }
+  nav ul li a {
+    text-decoration: none;
+    color: #0066ff;
+    text-align: center;
+    margin-left: 1rem;
+    padding: 1rem;
+    transition: linear;
+    
+  }
+  nav ul li a:hover {
+    background-color: #0066ff;
+    color: #ffffff;
+    border-bottom: 0.1rem solid #000d21;
+ 
+    transition: all 0.2s;
+    box-shadow: #0066ff 0.2rem 0.1rem 0.9rem 0.1rem;
+  
+  } 
+   .active {
+    color: #0d0043;
+    border-bottom: 0.1rem solid #003b42;
+  }
+  /* SearchBar */
+   /* nav ul li input {
+    border: none;
+    border-radius: 2rem;
+  background-color: none;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    width: 12rem;
+    height: 2rem;
+    border: 0.01rem solid rgb(3, 32, 89);
+  }
+  nav ul li input:focus {
+    border: none;
+    color: rgb(0, 0, 0);
+    border-radius: 2rem;
+    transition: all 0.5s;
+    padding: 1rem;
+    outline: none;
+    box-shadow: #0066ff 0.2rem 0.1rem 0.9rem 0.1rem;
+  }
+  nav ul li input::placeholder {
+    color: #52050a;
+    opacity: 0.5;
+    padding: 0.2rem;
+  } 
+  nav ul li  .searchic {
+    max-width: 1.4rem;
+    margin-top: 0.5rem;
+    margin-left: -2rem;
+    margin-bottom: -0.3rem;
+    cursor: pointer;
+  }
+  nav ul li .logonav{
+    max-width: 7rem;
+  
+    position: absolute;
+    left: 2rem;
+    top: 0rem;
+  }
+  nav ul li .enterLogin{
+    max-width: 2rem;
+    margin-left: 5rem;
+    cursor: pointer;
+  
+  }
+  .sticky {
+    position: fixed;
+    top: 0;
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+ width: 100%;
+    height: 4.5rem;
+    background-color: #eeeeee;
+  }
+  
+  
+  .carticon 
+  {
+      font-size: 30px;
+      color: white;
+     
+  }
+  .hearticon 
+  {
+      color: white;
+    font-size: 30px;
+    margin-left: 1000px;
+  }  */
+   

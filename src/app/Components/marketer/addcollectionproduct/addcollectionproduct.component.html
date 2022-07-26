@@ -1,27 +1,18 @@
-<!-- <form [formGroup]="collectionform" >
+<form >
   <h1>Add Collection</h1>
-  <div>
-    <label for="IDEmail">
-      <i class="fa fa-solid fa-id-badge"></i> <span>Marketer ID</span></label>
-  </div>
-  <input formControlName="email" type="email" name="Email" id="IDEmail" placeholder="enter your ID " required>
-  <div>
-    <label for="IDEmail">
-      <i class=" fa fa-solid fa-hashtag"></i> <span>Code</span></label>
-  </div>
-  <input formControlName="email" type="email" name="Email" id="IDEmail" placeholder="enter your Collection Code "
-    required>
+ 
+   
   <div>
     <label for="IDEmail">
       <i class="fa fa-solid fa-file-signature"></i><span>Name En</span></label>
   </div>
-  <input formControlName="email" type="email" name="Email" id="IDEmail" placeholder="enter your Collection  Name En "
+  <input formControlName="NameEN" type="text"  id="IDEmail" placeholder="enter your Collection  Name En "
     required>
   <div>
     <label for="IDEmail">
       <i class="fa fa-solid fa-pen"></i> <span>Name Ar</span></label>
   </div>
-  <input formControlName="email" type="email" name="Email" id="IDEmail" placeholder="enter your Collection  Name Ar"
+  <input formControlName="NameAr" type="text"  id="IDEmail" placeholder="enter your Collection  Name Ar"
     required>
 
 
@@ -29,9 +20,9 @@
 
 
   <div class="but-sign">
-    <button (click)="addcollection()" class="btn ">
+    <button (click)="add()" class="btn ">
       Add</button>
     <button type="button" class="btn " routerLink="/marketer/protuctchossebymarketer">
       Add Product</button>
   </div>
-</form> -->
+</form>

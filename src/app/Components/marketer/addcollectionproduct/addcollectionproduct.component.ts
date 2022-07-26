@@ -3,7 +3,9 @@ import { MarketerService } from 'src/app/service/marketer.service';
 import { HttpClient } from '@angular/common/http';
 import { addcollectionViewModel } from 'src/app/Models/addcollectionViewMpdel';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CollectionService } from 'src/app/service/collection.service';
+import { CollectionEditViewModel, CollectionViewModel } from 'src/app/Models/CollectionViewModel';
 
 @Component({
   selector: 'app-addcollectionproduct',
@@ -11,25 +13,35 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./addcollectionproduct.component.css']
 })
 export class AddcollectionproductComponent implements OnInit {
-  public collectionform :FormGroup = new FormGroup([]);
-  constructor(private marketer :MarketerService , private http :HttpClient ,private Formbuilder:FormBuilder ) { }
+  // public collectionform :FormGroup = new FormGroup([]);
+  public formcollection !:FormGroup;
+  Collection:CollectionEditViewModel =new CollectionEditViewModel()
+  constructor(private router:Router,private marketer :MarketerService ,private CollectionServices :CollectionService, private http :HttpClient ,private Formbuilder:FormBuilder ) { }
 
   ngOnInit(): void {
+    //this. CollectionServices.getCollection().subscribe();
+      // this.collectionform = this.Formbuilder.group({
+      //  NameEN:[""],
+      //  NameAr:[""],
+      // })
+      this.CollectionServices.getCollection().subscribe();
+      this.formcollection=this.Formbuilder.group({
+        NameEN:[""],
+         NameAr:[""],
+      })
+   }
+  add(){
+    
+    this.Collection.NameEN=this.formcollection.value["NameEN"];
+    this.Collection.NameAr=this.formcollection.value["NameAr"];
+    
+    this.CollectionServices.addCollection(this.Collection).subscribe(
 
-      this.collectionform =this.Formbuilder.group({
-        MarketerID :[""] ,
-        Code: [""] ,
-        NameAr : [""]  ,
-        NameEN : [""] 
-  })
-}
-  addcollection()
-  {
-    let value = new addcollectionViewModel();
-    value.MarketerID =this.collectionform.value["MarketerID"];
-    value.Code=this.collectionform.value["Code"];
-    value.NameAr=this.collectionform.value["NameAr"];
-    value.NameEN =this. collectionform.value["NameEN"];
-    this.http.post<any>("https://localhost:63000/collction/add",value)  
+      res=>{
+        
+        console.log(res)
+        this.router.navigateByUrl("/GetCollections")
+      }
+      );
   }
 }

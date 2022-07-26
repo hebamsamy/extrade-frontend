@@ -19,11 +19,11 @@ export class ApiService {
   }
   getproduct()
   {
-    return this.http.get<any>("https://fakestoreapi.com/products")
-    .pipe(map((res:any)=>{
-      return res
-    } 
-    ))
+    return this.http.get<any>("https://localhost:63000/Api/Getproduct")
+    // .pipe(map((res:any)=>{
+    //  console.log(res)
+    // } 
+ 
   }
 getallcategories()
 {

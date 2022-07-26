@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { LoginViewModel } from 'src/app/Models/LoginViewModel';
+import { AccountService } from 'src/app/service/Account.service';
 
 @Component({
   selector: 'app-login',
@@ -10,53 +11,37 @@ import { LoginViewModel } from 'src/app/Models/LoginViewModel';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-public loginform !: FormGroup;
-  constructor(private formbuilder:FormBuilder , private http:HttpClient ,private router :Router) { }
+  public loginform !: FormGroup;
+  constructor(private formbuilder: FormBuilder, private Account: AccountService, private router: Router) { }
 
   ngOnInit(): void {
-    this.loginform=this.formbuilder.group({
-      Email: ["",[Validators.required,Validators.pattern("[A-Za-z0-9.%-]+@[A-Za-z0-9.%-]+\\.[a-z]{2,3}")]],
-      Password:["",Validators.required],
-      RememberMe:[false]
+    this.loginform = this.formbuilder.group({
+      Email: ["", [Validators.required, Validators.pattern("[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[a-z]{2,3}")]],
+      Password: ["", Validators.required],
+      RememberMe: [false]
 
     })
   }
-  login(){
+  login() {
     let value = new LoginViewModel()
     value.Email = this.loginform.value['Email']
-    value.Password = this.loginform.value['password']
-    value.RememberMe=this.loginform.value["RememberMe"]
+    value.Password = this.loginform.value['Password']
+    value.RememberMe = this.loginform.value["RememberMe"]
 
-    this.http.post<any>("https://localhost:63000/User/SignIn",value).
-    subscribe(res=>
-      {
-       
-        alert("success");
-        this.router.navigate(['home'])
-      })
-
-      // this.Account.login(log).subscribe(res=>{
-      //   if(res.message=="Done"){
-      //     // localStorage.setItem('Token',JASON.stringfy());
-      //     localStorage.setItem('username',log.Email);
-      //     // localStorage.setItem('RememberMe',res.rememberMe);
-    
-    let obj:{
-      Token:any,
-      ReturnUrl :string,
-      RememberMe:string,
-      message:String
-    } = JSON.parse(localStorage.getItem("Token")!)
-    console.log(obj.Token)
-   
-    
-      
-        this.router.navigateByUrl('/Create')
-        // clearTimeout(res.Token)
+    this.Account.login(value).subscribe(res => {
+      if (res.success == true) {
+        console.log(res)
+        localStorage.setItem('Token', res.token);
+        localStorage.setItem('username', value.Email);
+        localStorage.setItem('role', res.role);
+        localStorage.setItem("id", res.id);
+        if (res.role == "User") { this.router.navigateByUrl("/user") }
+        else { this.router.navigateByUrl("/marketer/updateprofile") }
+      } else {
+        alert("try Again !!!!")
       }
-      // else
-      // alert('Wrong Email or Password !!  ')
-      
-    }
- 
-  
+    })
+
+
+  }
+}
